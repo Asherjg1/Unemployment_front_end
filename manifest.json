@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Unemployment_Front_End",
-  "version": "1.0",
+  "version": "2.0",
   "browser_action": {
     "default_popup": "popup.html"
   },
@@ -11,12 +11,8 @@
   "content_scripts": [
     {
        "matches": ["http://*/*","https://*/*"],
-      "js": [ "myscript.js"]
+      "js": ["jquery-3.5.0.min.js", "popup.js"]
     }
-  ],
-  "background": {
-        "scripts": [
-        ]
+  ]
 
-    }
 }
