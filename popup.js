@@ -13,12 +13,8 @@ $.ajax({
 });
 }
 function getEmployees(res){
-  var tne = 0
-  var idx
-  var values=res['companies']
-  for (idx = 0; idx < values.length; idx++){
-    console.log(values[idx]['number_of_employees']);
-tne+= parseInt(values[idx]['number_of_employees'])
-}
-console.log(tne);
+
+  var values=res["companies"]["total_num_laid_off"]
+$(".container.total-num-laid-off").text(values)
+console.log(values);
 }
