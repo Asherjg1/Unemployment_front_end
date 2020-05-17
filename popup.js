@@ -9,12 +9,26 @@ $.ajax({
 
   success: function(res){
   getEmployees(res);
+  getUnemploymentRate(res);
+  getTotalCompanyLayoff(res);
 }
 });
 }
 function getEmployees(res){
 
   var values=res["companies"]["total_num_laid_off"]
-$(".container.total-num-laid-off").text(values)
-console.log(values);
+$(".container.total-num-laid-off").text("Total Number Laid Off:" +values)
+
+}
+function getUnemploymentRate(res){
+
+  var values=res["companies"]["unemployment_rate"]
+$(".container.unemployment-rate").text("Unemployment Rate: "+values)
+
+}
+function getTotalCompanyLayoff(res){
+
+  var values=res["companies"]["number_of_companies_laid_off"]
+$(".container.num-companies-laid-off").text("Total Number of Companies Laid Off:" +values)
+
 }
